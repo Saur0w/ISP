@@ -5,7 +5,6 @@ import Lenis from "lenis";
 import { useEffect } from "react";
 import Landing from "@/components/Landing";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Intro from "@/components/Intro";
 
 export default function Home() {
@@ -25,10 +24,8 @@ export default function Home() {
     }, []);
     return (
         <div className={styles.page}>
-            <Header />
             <Landing />
             <Intro />
-            <Footer />
         </div>
   );
 }

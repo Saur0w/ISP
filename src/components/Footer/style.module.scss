@@ -1,5 +1,179 @@
+$bg-dark: #000000;
+$text-light: #ffffff;
+$text-muted: #888888;
+$border-color: rgba(255, 255, 255, 0.1);
+
 .footer {
-  height: 80%;
   width: 100%;
-  background: #e8e7e7;
+  background: $bg-dark;
+  color: $text-light;
+  padding: 6rem 4vw 2rem 4vw;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-top: 1px solid $border-color;
+
+  .footerContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  /* ==========================================================================
+     Top Section: Big CTA Link
+     ========================================================================== */
+  .ctaRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .subLabel {
+      font-size: 1.1rem;
+      color: $text-muted;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .ctaTitle {
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 0;
+
+      .ctaLink {
+        color: $text-light;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.2rem;
+
+        /* Sophisticated underline slide hover effect */
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(1);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $text-light;
+          transform-origin: bottom left;
+          transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        &:hover::after {
+          transform: scaleX(0);
+          transform-origin: bottom right;
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     Middle Section: Links Grid Directory
+     ========================================================================== */
+  .directoryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid $border-color;
+
+    .dirColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      .columnTitle {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $text-muted;
+        font-weight: 600;
+      }
+
+      .footerNav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        a {
+          color: $text-light;
+          text-decoration: none;
+          font-size: 1.05rem;
+          font-weight: 400;
+          transition: color 0.2s ease, transform 0.2s ease;
+          width: max-content;
+
+          &:hover {
+            color: $text-muted;
+            transform: translateX(3px);
+          }
+        }
+      }
+
+      .infoText {
+        font-size: 1.1rem;
+        margin: 0;
+        color: $text-light;
+      }
+
+      .infoTextStatus {
+        font-size: 0.95rem;
+        margin: 0;
+        color: #4ade80; /* Subtle green active light indication */
+        font-weight: 500;
+      }
+
+      &.alignRight {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+  }
+
+  /* ==========================================================================
+     Bottom Section: Minimal Fine Print Row
+     ========================================================================== */
+  .copyrightRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+    color: $text-muted;
+    font-weight: 400;
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 6vw 2rem 6vw;
+
+    .footerContainer {
+      gap: 3.5rem;
+    }
+
+    .directoryGrid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+
+      .dirColumn.alignRight {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    .copyrightRow {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
 }
