@@ -40,7 +40,6 @@ export default function Footer() {
                     <div className={`${styles.dirColumn} ${styles.alignRight}`}>
                         <span className={styles.columnTitle}>Location</span>
                         <p className={styles.infoText}>Uttarakhand, India</p>
-                        <p className={styles.infoTextStatus}>● Available for freelance</p>
                     </div>
                 </div>
 
