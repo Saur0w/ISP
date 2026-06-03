@@ -5,6 +5,7 @@ import Lenis from "lenis";
 import { useEffect } from "react";
 import Landing from "@/components/Landing";
 import Intro from "@/components/Intro";
+import Tools from "@/components/Tools";
 import Services from "@/components/Services";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <div className={styles.page}>
             <Landing />
             <Intro />
+            <Tools />
             <Services />
         </div>
   );

@@ -1,0 +1,172 @@
+$bg-color: #ffffff;
+$text-color: #0d0d0d;
+$text-muted: #555555;
+$border-color: rgba(0, 0, 0, 0.08);
+
+/* ==========================================================================
+   GSAP SplitText Mask Layers
+   ========================================================================== */
+:global(.split-parent) {
+  overflow: hidden !important;
+  display: block;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+:global(.split-child) {
+  display: block;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Main Section Architecture
+   ========================================================================== */
+.about {
+  position: relative;
+  min-height: 120vh;
+  width: 100%;
+  background: $bg-color;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  padding: 10rem 4vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: clamp(4.5rem, 11vw, 10rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: $text-color;
+  }
+
+  .description {
+    font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+    max-width: 900px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: $text-muted;
+    margin: 0 0 2rem 0;
+
+    strong {
+      color: $text-color;
+      font-weight: 700;
+    }
+  }
+
+  /* ==========================================================================
+     Minimalistic Skills Matrix Grid
+     ========================================================================== */
+  .toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vw;
+    width: 100%;
+    padding-top: 4rem;
+    border-top: 1px solid $border-color;
+
+    .gridColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .columnTitle {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: $text-muted;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .skillsList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+
+        .skillItem {
+          font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+          font-weight: 600;
+          color: $text-color;
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          transition: transform 0.25s ease, color 0.25s ease;
+          cursor: default;
+
+          .bulletDot {
+            width: 6px;
+            height: 6px;
+            background-color: $text-color;
+            border-radius: 50%; /* Pure geometric minimal dot */
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease;
+          }
+
+          &:hover {
+            color: $text-muted;
+            transform: translateX(4px);
+
+            .bulletDot {
+              background-color: $text-muted;
+              transform: scale(1.4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Responsive Control Layers
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about {
+    .toolsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 6rem 6vw;
+
+    .container {
+      gap: 3rem;
+    }
+
+    .title {
+      font-size: clamp(3.5rem, 14vw, 6.5rem);
+    }
+
+    .description {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .toolsGrid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding-top: 3rem;
+    }
+  }
+}

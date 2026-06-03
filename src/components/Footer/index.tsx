@@ -9,11 +9,10 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContainer}>
-                {/* Top Row: Big Call to Action */}
                 <div className={styles.ctaRow}>
                     <span className={styles.subLabel}>Have an idea?</span>
                     <h2 className={styles.ctaTitle}>
-                        <Link href="mailto:isha@example.com" className={styles.ctaLink}>
+                        <Link href="mailto:inegi9336@gmail.com" className={styles.ctaLink}>
                             Let&apos;s work together
                         </Link>
                     </h2>
@@ -25,15 +24,14 @@ export default function Footer() {
                         <nav className={styles.footerNav}>
                             <Link href="/">Home</Link>
                             <Link href="/about">About</Link>
-                            <Link href="/work">Work</Link>
+                            <Link href="/contact">Contact</Link>
                         </nav>
                     </div>
                     <div className={styles.dirColumn}>
                         <span className={styles.columnTitle}>Connect</span>
                         <nav className={styles.footerNav}>
-                            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
-                            <Link href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</Link>
-                            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</Link>
+                            <Link href="https://github.com/Ishacodeuser" target="_blank" rel="noopener noreferrer">GitHub</Link>
+                            <Link href="https://x.com/dev_ezha" target="_blank" rel="noopener noreferrer">X</Link>
                         </nav>
                     </div>
 
