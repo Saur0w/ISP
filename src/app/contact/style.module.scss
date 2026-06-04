@@ -1,0 +1,171 @@
+.contact {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 8rem 5%;
+  min-height: 100vh;
+  background-color: #f9f9fa;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .email {
+    font-size: 1rem;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: auto;
+
+    &:hover {
+      color: #1a1a1a;
+    }
+  }
+}
+
+.footerDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 6rem;
+
+  h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .socials ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+
+    a {
+      font-size: 0.85rem;
+      color: #888;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #1a1a1a;
+      }
+    }
+  }
+}
+
+/* --- Right Column (Form) --- */
+.rightCol {
+  padding-top: 2rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+}
+
+/* --- THE FIX: Nesting raw tags inside .form --- */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Scoped inside .form so Next.js doesn't complain */
+  label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  input, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #b3b3b3;
+      font-weight: 300;
+    }
+
+    &:focus {
+      border-bottom-color: #1a1a1a;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 2rem;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupFull {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.submitBtn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  transition: gap 0.3s ease;
+
+  &:hover {
+    gap: 1rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+}
