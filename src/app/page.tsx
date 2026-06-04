@@ -7,6 +7,7 @@ import Landing from "@/components/Landing";
 import Intro from "@/components/Intro";
 import Tools from "@/components/Tools";
 import Services from "@/components/Services";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
     useEffect(() => {
@@ -25,6 +26,7 @@ export default function Home() {
     }, []);
     return (
         <div className={styles.page}>
+            <Preloader />
             <Landing />
             <Intro />
             <Tools />
